@@ -211,7 +211,6 @@ void CHud :: Init( void )
 
     CVAR_CREATE( "cl_showspeed", "0", 0);
 	CVAR_CREATE( kvLabelMaps, "1", FCVAR_ARCHIVE);
-	CVAR_CREATE( kvGammaRamp, "1", FCVAR_ARCHIVE);
 	CVAR_CREATE( kvCustomCrosshair, "1", FCVAR_ARCHIVE);
 	CVAR_CREATE( kvHudMapZoom, "3", FCVAR_ARCHIVE);
 	CVAR_CREATE( kvLabelHivesight, "1", FCVAR_ARCHIVE);

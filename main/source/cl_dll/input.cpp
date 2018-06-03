@@ -133,7 +133,6 @@ cvar_t  *cl_musicdir;
 cvar_t	*cl_quickselecttime;
 cvar_t	*cl_highdetail;
 cvar_t	*cl_cmhotkeys;
-cvar_t	*cl_forcedefaultfov;
 cvar_t	*cl_dynamiclights;
 cvar_t	*cl_buildmessages;
 cvar_t	*cl_particleinfo;
@@ -1537,13 +1536,11 @@ void InitInput (void)
 	cl_musicvolume		= gEngfuncs.pfnRegisterVariable ( kvMusicVolume, "155", FCVAR_ARCHIVE );
 	cl_musicdir			= gEngfuncs.pfnRegisterVariable ( kvMusicDirectory, "", FCVAR_ARCHIVE);
 	cl_musicdelay		= gEngfuncs.pfnRegisterVariable ( kvMusicDelay, "90", FCVAR_ARCHIVE);
-	cl_forcedefaultfov	= gEngfuncs.pfnRegisterVariable ( kvForceDefaultFOV, "0", FCVAR_ARCHIVE );
 	cl_dynamiclights	= gEngfuncs.pfnRegisterVariable ( kvDynamicLights, "1", FCVAR_ARCHIVE );
 	cl_buildmessages	= gEngfuncs.pfnRegisterVariable ( kvBuildMessages, "1", FCVAR_ARCHIVE);
 	cl_quickselecttime	= gEngfuncs.pfnRegisterVariable ( kvQuickSelectTime, ".15", FCVAR_ARCHIVE );
 	cl_highdetail		= gEngfuncs.pfnRegisterVariable ( kvHighDetail, "1", FCVAR_ARCHIVE );
 	cl_cmhotkeys		= gEngfuncs.pfnRegisterVariable ( kvCMHotkeys, "qwerasdfzxcv", FCVAR_ARCHIVE );
-	cl_forcedefaultfov	= gEngfuncs.pfnRegisterVariable ( kvForceDefaultFOV, "0", FCVAR_ARCHIVE );
 	cl_particleinfo		= gEngfuncs.pfnRegisterVariable ( kvParticleInfo, "0", FCVAR_ARCHIVE );
 	cl_widescreen		= gEngfuncs.pfnRegisterVariable	( kvWidescreen, "1", FCVAR_ARCHIVE );
 

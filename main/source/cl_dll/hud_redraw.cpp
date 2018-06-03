@@ -37,7 +37,6 @@ extern int g_iVisibleMouse;
 float HUD_GetFOV( void );
 
 extern cvar_t *sensitivity;
-extern cvar_t *cl_forcedefaultfov;
 
 // Think
 void CHud::Think(void)
@@ -60,11 +59,6 @@ void CHud::Think(void)
 	else
 	{
 		m_iFOV = newfov;
-	}
-
-	if(cl_forcedefaultfov->value)
-	{
-		m_iFOV = 90;
 	}
 
 	// the clients fov is actually set in the client data update section of the hud

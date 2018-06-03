@@ -70,13 +70,6 @@ DESCRIPTION INFO_OPTIONS
 		{ "1" }
 	}
 
-	"cl_forcedefaultfov"
-	{
-		"Force 90 degree FOV"
-		{ BOOL }
-		{ "0" }
-	}
-
 	"cl_buildmessages"
 	{
 		"Show team build messages"
@@ -87,13 +80,6 @@ DESCRIPTION INFO_OPTIONS
 	"cl_dynamiclights"
 	{
 		"Dynamic lights"
-		{ BOOL }
-		{ "1" }
-	}
-
-	"cl_gammaramp"
-	{
-		"Enable gamma ramp"
 		{ BOOL }
 		{ "1" }
 	}
