@@ -1,16 +1,20 @@
-language: cpp
+language: generic
 
 matrix:
   include:
     - os: linux
-      compiler: gcc
+      compiler: g++-8
       script: cd main/source/linux && make
       env: OPJ_CI_ARCH=i386
       addons:
         apt:
+          sources:
+            - ubuntu-toolchain-r-test
           packages:
-            - gcc-multilib
-            - g++-multilib
+            - gcc-8
+            - g++-8
+            - gcc-8-multilib
+            - g++-8-multilib
             - libc6-i386
             - libcurl4-openssl-dev:i386
             - libpng12-dev:i386

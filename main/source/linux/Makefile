@@ -30,9 +30,9 @@ ARCH=i386
 ELF-GC-DYNSTR=./elf-gc-dynstr
 
 ifeq ($(OS),Linux)
-	CC="gcc -m32"
-	CPLUS="g++ -m32 -std=c++14"
-	CPP_LIB:=-L$(shell g++ -m32 -print-file-name=libstdc++.so | xargs dirname) -lstdc++ -ldl -lpthread
+	CC="gcc-8 -m32"
+	CPLUS="g++-8 -m32 -std=c++14"
+	CPP_LIB:=-L$(shell g++-8 -m32 -print-file-name=libstdc++.so | xargs dirname) -lstdc++ -ldl -lpthread
 endif
 
 ifeq ($(OS),Darwin)
@@ -51,7 +51,7 @@ ifeq ($(OS),Darwin)
 	#SDKROOT ?= $(SDK_DIR)/MacOSX10.6.sdk
 	SDKROOT ?= $(SDK_DIR)/MacOSX10.8.sdk
 
-	ARCH_FLAGS ?= -arch i386 -m32 -march=prescott -gdwarf-2 -g2  -Wno-typedef-redefinition -momit-leaf-frame-pointer -mtune=core2
+	ARCH_FLAGS ?= -arch i386 -std=c++14 -m32 -march=prescott -gdwarf-2 -g2  -Wno-typedef-redefinition -momit-leaf-frame-pointer -mtune=core2
 	CPP_LIB=-lstdc++ -lpthread
 
 	ifeq ($(origin AR), default)
