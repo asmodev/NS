@@ -137,6 +137,9 @@ cvar_t	*cl_forcedefaultfov;
 cvar_t	*cl_dynamiclights;
 cvar_t	*cl_buildmessages;
 cvar_t	*cl_particleinfo;
+cvar_t	*cl_widescreen;
+cvar_t	*cl_ambientsound;
+cvar_t	*senslock;
 
 /*
 ===============================================================================
@@ -1544,6 +1547,9 @@ void InitInput (void)
 	cl_cmhotkeys		= gEngfuncs.pfnRegisterVariable ( kvCMHotkeys, "qwerasdfzxcv", FCVAR_ARCHIVE );
 	cl_forcedefaultfov	= gEngfuncs.pfnRegisterVariable ( kvForceDefaultFOV, "0", FCVAR_ARCHIVE );
 	cl_particleinfo		= gEngfuncs.pfnRegisterVariable ( kvParticleInfo, "0", FCVAR_ARCHIVE );
+	cl_widescreen		= gEngfuncs.pfnRegisterVariable	( kvWidescreen, "1", FCVAR_ARCHIVE );
+	cl_ambientsound		= gEngfuncs.pfnRegisterVariable	( kvAmbientSound, "2", FCVAR_ARCHIVE);
+	senslock			= gEngfuncs.pfnRegisterVariable	("senslock", "0", FCVAR_ARCHIVE);
 
 	// Initialize third person camera controls.
 	CAM_Init();

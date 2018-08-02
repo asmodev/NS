@@ -3896,7 +3896,7 @@ bool AvHHud::SetCursor(AvHOrderType inOrderType)
 	return theSuccess;
 }
 
-void AvHHud::GetCursor(HSPRITE& outSprite, int& outFrame)
+void AvHHud::GetCursor(AVHHSPRITE& outSprite, int& outFrame)
 {
 
     if (g_iUser1 == 0)
@@ -4816,8 +4816,8 @@ void AvHHud::InitExploitPrevention() {
 	ForceCvar("gl_max_size", gl_max_size, 256.0f);
 
 	RemoveAlias("lightgamma");
-	if(lightgamma && lightgamma->value < 2.0) {
-		ForceCvar("lightgamma", lightgamma, 2.0f);
+	if(lightgamma && lightgamma->value < 1.0) {
+		ForceCvar("lightgamma", lightgamma, 1.0f);
 	}
 	if(lightgamma && lightgamma->value > 5.0) {
 		ForceCvar("lightgamma", lightgamma, 5.0f);
@@ -5659,7 +5659,7 @@ string AvHHud::GetRankTitle(bool inShowUnspentLevels) const
 {
 	string theText;
 
-	char* theTeamName = this->GetIsMarine() ? "Marine" : "Alien";
+	char const* theTeamName = this->GetIsMarine() ? "Marine" : "Alien";
 	int theCurrentLevel = this->GetHUDExperienceLevel();
 
 	char theCharArray[512];
@@ -6923,7 +6923,7 @@ void AvHHud::HideCommandMenu()
 		gViewPort->HideCommandMenu();
 }
 
-void AvHHud::GetSpriteForUser3(AvHUser3 inUser3, int& outSprite, int& outFrame, int& outRenderMode)
+void AvHHud::GetSpriteForUser3(AvHUser3 inUser3, AVHHSPRITE& outSprite, int& outFrame, int& outRenderMode)
 {
 
     switch (inUser3)
@@ -7095,7 +7095,7 @@ void AvHHud::HideCrosshair()
 
 }
 
-void AvHHud::SetCurrentCrosshair(HSPRITE hspr, wrect_t rc, int r, int g, int b)
+void AvHHud::SetCurrentCrosshair(AVHHSPRITE hspr, wrect_t rc, int r, int g, int b)
 {
     mCrosshairSprite = hspr;
     mCrosshairRect   = rc;

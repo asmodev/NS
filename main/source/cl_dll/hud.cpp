@@ -251,6 +251,7 @@ void CHud :: Init( void )
 	m_AmmoSecondary.Init();
 	m_TextMessage.Init();
 	m_StatusIcons.Init();
+	m_Crosshairs.Init();
 	
     m_Spectator.m_chatEnabled = (m_SayText.m_HUD_saytext->value!=0);
     
@@ -351,7 +352,7 @@ void CHud :: VidInit( void )
 			}
 
 			// allocated memory for sprite handle arrays
- 			m_rghSprites = new HSPRITE[m_iSpriteCount];
+ 			m_rghSprites = new AVHHSPRITE[m_iSpriteCount];
 			m_rgrcRects = new wrect_t[m_iSpriteCount];
 			m_rgszSpriteNames = new char[m_iSpriteCount * MAX_SPRITE_NAME_LENGTH];
 
@@ -414,6 +415,7 @@ void CHud :: VidInit( void )
 	m_AmmoSecondary.VidInit();
 	m_TextMessage.VidInit();
 	m_StatusIcons.VidInit();
+	m_Crosshairs.VidInit();
 	GetClientVoiceMgr()->VidInit();
 }
 
@@ -535,7 +537,7 @@ int CHud::MsgFunc_SetFOV(const char *pszName,  int iSize, void *pbuf)
 	// the clients fov is actually set in the client data update section of the hud
 
 	// Set a new sensitivity
-	if ( m_iFOV == def_fov )
+	if ( m_iFOV == def_fov || CVAR_GET_FLOAT("senslock") == 1.0f)
 	{  
 		// reset to saved sensitivity
 		m_flMouseSensitivity = 0;
